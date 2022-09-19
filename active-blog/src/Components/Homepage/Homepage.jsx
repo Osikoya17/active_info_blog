@@ -41,7 +41,7 @@ const Homepage = () => {
     return (
         <div className="main">
             <Navbar />
-            <main className="w-100 d-flex flex-column p-5 gap-4 pt-4 h-auto bg-light">
+            <main className="w-100 d-flex flex-column p-4 gap-4 pt-4 h-auto bg-light">
                 <Header />
                 <div>
                     <div className="row px-2">

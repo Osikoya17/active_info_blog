@@ -3,7 +3,7 @@ import logo from '../../assets/A-logo.png'
 import Bars from '../../assets/search-icon.png'
 const Navbar = () => {
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light  px-5 shadow-sm">
+        <nav className="navbar navbar-expand-lg navbar-light bg-light  px-4 shadow-sm">
             <a className="navbar-brand fs-5  fw-bold logo" href="#"><img className='w-100' src={logo} alt="" /></a>
             <button className="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
                 aria-expanded="false" aria-label="Toggle navigation">⩸</button>
