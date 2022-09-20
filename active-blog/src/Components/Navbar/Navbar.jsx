@@ -1,4 +1,5 @@
 import './Navbar.css'
+import { Link } from "react-router-dom"
 import logo from '../../assets/A-logo.png'
 import Bars from '../../assets/search-icon.png'
 const Navbar = () => {
@@ -30,7 +31,11 @@ const Navbar = () => {
                     <input className="form-control me-sm-2 search" type="search" placeholder="Search" />
                     <button className="btn btn-outline-secondary my-2 my-sm-0" type="submit"><img src={Bars} alt="" /></button>
                 </form>
+
+                <Link to={'/signup'} className="navbar-brand btn btn-light shadow-sm ms-4" >Register</Link>
+
                 <button className="navbar-brand btn btn-light shadow-sm ms-4" >Create Post</button>
+
 
             </div>
         </nav>
