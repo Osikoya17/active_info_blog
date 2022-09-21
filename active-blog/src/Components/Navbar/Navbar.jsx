@@ -34,9 +34,6 @@ const Navbar = () => {
 
                 <Link to={'/signup'} className="navbar-brand btn btn-light shadow-sm ms-4" >Register</Link>
 
-                <button className="navbar-brand btn btn-light shadow-sm ms-4" >Create Post</button>
-
-
             </div>
         </nav>
     );
