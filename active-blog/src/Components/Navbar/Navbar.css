@@ -5,10 +5,12 @@
 
 a:hover {
     color: #bf0100 !important;
+    cursor: pointer;
 }
 
 a:active {
     color: #bf0100 !important;
+    cursor: pointer;
 }
 
 .navbar {

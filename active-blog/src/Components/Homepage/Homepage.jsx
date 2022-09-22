@@ -41,7 +41,7 @@ const Homepage = () => {
     return (
         <div className="main">
             <Navbar />
-            <main className="w-100 d-flex flex-column p-5 gap-4 pt-4 h-auto bg-light">
+            <main className="w-100 d-flex flex-column p-4 gap-4 pt-4 h-auto bg-light">
                 <Header />
                 <div>
                     <div className="row px-2">
@@ -77,10 +77,12 @@ const Homepage = () => {
                                     <div className="d-flex  flex-column gap-2 p-2">
                                         {
                                             trend.map((data, index) =>
-                                                <div className="w-100 d-flex gap-3 align-items-center" key={index}><span className="border border-2 pop-img rounded-2">
-                                                    <img src={data.urlToImage} className="img-fluid rounded-start w-100  h-100" alt="..." />
-                                                </span>
+                                                <div className="w-100 d-flex   gap-2 align-items-center" key={index}><div className="border border-2 pop-img rounded-2">
+                                                    <img src={data.urlToImage} className="img-fluid w-100 h-100 rounded-start" alt="..." />
+                                                </div>
+
                                                     <a href="" className="popular text-truncate">{data.title} </a>
+
                                                 </div>
                                             )
                                         }
