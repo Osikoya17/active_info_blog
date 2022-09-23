@@ -1,2 +1,11 @@
 # active_info_blog
-This is the active_info_blog react template
+
+url = https://active-info.onrender.com
+
+     ROUTES
+
+GET        /blog-post
+POST	     /upload
+POST	     /signup
+POST	     /login	
+POST	     /delete
