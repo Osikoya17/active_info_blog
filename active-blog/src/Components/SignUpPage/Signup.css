@@ -94,6 +94,18 @@
     color: red;
 }
 
+
+
+
+/* create post css  */
+
+.select-div:focus{
+    border: 2px solid rgb(236, 236, 236) !important;
+    box-shadow: 3px 3px 10px rgb(236, 236, 236), -3px -3px 10px rgb(236, 236, 236) !important;
+}
+.outli{
+    outline: none !important;
+}
 @media (max-width:900px) {
     .side-one {
         display: none;

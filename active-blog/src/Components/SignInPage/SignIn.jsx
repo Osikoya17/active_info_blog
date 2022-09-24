@@ -5,6 +5,40 @@ import background from "../../assets/Background.jpg";
 import logo from "../../assets/A-logo.png";
 
 function SignIn() {
+     
+
+    //   let [email, setEmail] = useState("");
+    //   let [password, setPassword] = useState("")
+
+    // const HandleLogin = async() => {
+
+    //   let Nemail = email.trim()
+    //   let Npassword = password.trim()
+
+    //   if (!Nemail || !Npassword ) {
+    //     return swal("oppos!", "Kindly fill in the neccessary", "info");
+        
+    //   }
+    //   else{
+    //     const User = {
+    //       verifiedEmail,
+    //       Npassword
+    //      }
+
+    //      console.log(User);
+    //      try {
+          
+    //      } catch (error) {
+          
+    //      }
+    //   }
+       
+    //   setEmail(" ")
+    //   setPassword(" ")
+
+    // }
+
+    
   return (
     <div className="mainn container-fluid">
       <div className="sub-main shadow">
@@ -29,28 +63,32 @@ function SignIn() {
         <div className="side-two">
           <div className="sidetwo-main">
             <div className="sign-up text-dark">SIGN IN</div>
-            <div class="form-floating mb-3">
+            <div className="form-floating mb-3">
               <input
                 type="email"
-                class="form-control innpt"
+                className="form-control innpt"
                 id="floatingInput"
                 placeholder="name@example.com"
+                // value={email}
+                // onChange={e => setEmail(e.target.value)}
               />
               <label for="floatingInput">Email address</label>
             </div>
-            <div class="form-floating mb-3">
+            <div className="form-floating mb-3">
               <input
                 type="password"
-                class="form-control innpt"
+                className="form-control innpt"
                 id="floatingInput"
                 placeholder="name@example.com"
+                // value={password}
+                // onChange={e => setPassword(e.target.value)}
               />
               <label for="floatingInput">Password</label>
             </div>
-            {/* <div class="form-floating">
+            {/* <div className="form-floating">
                   <input
                     type="password"
-                    class="form-control innpt"
+                    className="form-control innpt"
                     id="floatingPassword"
                     placeholder="Password"
                   />
@@ -59,8 +97,9 @@ function SignIn() {
             <div className="w-100 mt-4">
               <button
                 type="button"
-                class="btn btn-outline-dark w-100  signupbtn"
+                className="btn btn-outline-dark w-100  signupbtn"
                 style={{ height: "6vh" }}
+                // onClick={HandleLogin}
               >
                 SIGN IN
               </button>
