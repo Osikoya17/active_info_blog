@@ -51,6 +51,35 @@ function Signup() {
     setPassword(" ");
   };
 
+  // functon for create post
+
+  const [article, setArticle] = useState("");
+  const [file, setFile] = useState("");
+
+
+  function handleFile(ev) {
+       console.log(ev.target.files[0]);
+       setFile(ev.target.files[0])
+
+  }
+
+  const Handlesubmit = async () => {
+    const url = ""
+
+    const formData = new FormData()
+
+    formData.set("image", file)
+    formData.set("article", article)
+
+    try {
+      const response = await axios.post(url, formData)
+
+      
+    } catch (error) {
+       console.log(error);
+    }
+  }
+
   return (
     <div className="mainn container-fluid">
       <div className="sub-main shadow">
@@ -143,33 +172,35 @@ function Signup() {
       {/* MODAL FOR CREATE POST */}
 
       <div
-        class="modal fade"
+        className="modal fade"
         id="exampleModal"
         tabindex="-1"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
       >
-        <div class="modal-dialog modal-lg ">
-          <div class="modal-content shadow">
-            <div class="modal-header">
-              <h5 class="modal-title mb-0" id="exampleModalLabel">
+        <div className="modal-dialog modal-lg  ">
+          <div className="modal-content shadow createmodal">
+            <div className="modal-header">
+              <h5 className="modal-title mb-0" id="exampleModalLabel">
                 Create a post
               </h5>
               <button
                 type="button"
-                class="btn-close"
+                className="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body">
-              <div className="text-dark ms-4 fs-5 fw-bolder mt-0">Habeebllah Jimoh</div>
+            <div className="modal-body">
+              <div className="text-dark ms-4 fs-5 fw-bolder mt-0">
+                Habeebllah Jimoh
+              </div>
               <div className="w-50 mt-2">
                 <select
-                  class="form-select select-div rounded-pill"
+                  className="form-select select-div rounded-pill"
                   aria-label="Default select example"
                 >
-                  <option  selected>Categories</option>
+                  <option selected>Categories</option>
                   <option value="Politics">Politics</option>
                   <option value="Games">Games</option>
                   <option value="Crypto">Crypto</option>
@@ -184,7 +215,57 @@ function Signup() {
                 </select>
               </div>
 
-              <textarea placeholder="What did you want to talk about?" className="w-100 border border-1 rounded-2 my-3 outli" style={{height: '20vh'}} > </textarea>
+              <textarea
+                type="text"
+                placeholder="What did you want to talk about?"
+                className="w-100 border border-1 rounded-2 my-3 outli"
+                style={{ height: "20vh" }}
+                onChange={e => setArticle(e.target.value)}
+              >
+                {" "}
+              </textarea>
+              <div className="container row d-flex justify-content-between my-1">
+                <div className="row col-md-4 d-flex justify-content-between">
+                  <label htmlFor="file" className="col-md-3">
+                    <i className="btn btn-outline-dark  border border-0 fa-solid fa-image fs-5 ">
+                      {" "}
+                    </i>{" "}
+                  </label>
+                  <input
+                    type="file"
+                    id="file"
+                    accept="image/png, image/gif, image/jpeg"
+                    style={{ display: "none" }}
+                    onChange={ev => handleFile(ev)}
+                  />
+                  <label htmlFor="file" className="col-md-3">
+                    <i className="btn btn-outline-dark  border border-0 fa-solid fa-video  fs-5 ">
+                      {" "}
+                    </i>{" "}
+                  </label>
+                  <input
+                    type="file"
+                    id="file"
+                    accept="video/mp4,video/x-m4v,video/*"
+                    style={{ display: "none" }}
+                  />
+                  <label htmlFor="file" className="col-md-3">
+                    <i className="btn btn-outline-dark  border border-0 fa-solid fa-file  fs-5 ">
+                      {" "}
+                    </i>{" "}
+                  </label>
+                  <input
+                    type="file"
+                    name="upload"
+                    accept="application/pdf,application/vnd.ms-excel"
+                    id="file"
+                    style={{ display: "none" }}
+                  />
+                </div>
+                <button className="btn btn-outline-dark col-md-2 fs-5 fw-bold" onClick={Handlesubmit}>
+                  Post
+                </button>
+              </div>
             </div>
           </div>
         </div>
