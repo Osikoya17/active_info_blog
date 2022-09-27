@@ -3,11 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="dist/magic-mouse.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + React</title>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script type="text/javascript" src="dist/magic_mouse.js"></script>
+
+    <script type="text/javascript">
+      options = {
+    "cursorOuter": "circle-basic",
+    "hoverEffect": "circle-move",
+    "hoverItemMove": false,
+    "defaultCursor": false,
+    "outerWidth": 30,
+    "outerHeight": 30
+        };
+      magicMouse(options);
+  </script>
   </body>
 </html>
