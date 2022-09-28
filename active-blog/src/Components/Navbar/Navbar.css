@@ -3,12 +3,12 @@
     box-shadow: 0 0 0 0.3rem #989898a6 !important;
 }
 
-a:hover {
+.lnk:hover {
     color: #bf0100 !important;
     cursor: pointer;
 }
 
-a:active {
+.lnk:active {
     color: #bf0100 !important;
     cursor: pointer;
 }
