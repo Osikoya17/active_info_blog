@@ -29,8 +29,9 @@ const UserNavbar = () => {
                     <input className="form-control me-sm-2 search outline-dark" type="search" placeholder="Search" />
                     <button className="btn btn-outline-dark my-2 my-sm-0 b" type="submit"><img src={Bars} alt="" /></button>
                 </form>
-                <Link className="navbar-brand btn  ms-4 b" >➕</Link>
-                <Link to={'/'} className="navbar-brand btn btn-dark shadow-sm ms-2 text-white" >Log Out</Link>
+                <Link to={'/'} className="navbar-brand btn btn-dark shadow-sm ms-2 text-white" >➕</Link>
+                <Link className="navbar-brand btn  ms-4 b" >Log Out</Link>
+
             </div>
         </nav>
     );
