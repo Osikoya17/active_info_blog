@@ -1,42 +1,57 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Signin.css'
+import axios from 'axios';
 import { Link } from "react-router-dom";
 import background from "../../assets/Background.jpg";
 import logo from "../../assets/A-logo.png";
 
+
 function SignIn() {
      
 
-    //   let [email, setEmail] = useState("");
-    //   let [password, setPassword] = useState("")
+      let [email, setEmail] = useState("");
+      let [password, setPassword] = useState("")
+      let [enterEmail, setenterEmail] = useState("")
+      let [enterPassword, setenterPassword] = useState("")
+      let [error, seterror] = useState(false)
+      let [errorMessage, seterrorMessage] = useState("")
 
-    // const HandleLogin = async() => {
+    const HandleLogin = async() => {
 
-    //   let Nemail = email.trim()
-    //   let Npassword = password.trim()
+       email = enterEmail.trim()
+      password = enterPassword.trim()
 
-    //   if (!Nemail || !Npassword ) {
-    //     return swal("oppos!", "Kindly fill in the neccessary", "info");
+      if (!email || !password ) {
+        return swal("oppos!", "Kindly fill in the neccessary", "info");
         
-    //   }
-    //   else{
-    //     const User = {
-    //       verifiedEmail,
-    //       Npassword
-    //      }
+      }
+      else{
+        const User = {
+          email,
+          password
+         }
 
-    //      console.log(User);
-    //      try {
-          
-    //      } catch (error) {
-          
-    //      }
-    //   }
+         console.log(User);
+         try {
+          const url = "https://active-info.onrender.com/login"
+          const response = await axios.post(url, User);
+          console.log(response);
+            console.log(response.data);
+            console.log(response.data.message);
+            
+         } catch (error) {
+          seterror(true)
+            console.log(error);
+            console.log(error.response.data);
+            seterrorMessage(error.response.data.message) 
+           
+         }
+      }
        
-    //   setEmail(" ")
-    //   setPassword(" ")
+      setEmail("")
+      setPassword("")
 
-    // }
+    }
 
     
   return (
@@ -69,21 +84,22 @@ function SignIn() {
                 className="form-control innpt"
                 id="floatingInput"
                 placeholder="name@example.com"
-                // value={email}
-                // onChange={e => setEmail(e.target.value)}
+                value={enterEmail}
+                onChange={e => setenterEmail(e.target.value)}
               />
               <label for="floatingInput">Email address</label>
             </div>
+            <span>{error?errorMessage : '' }</span>
             <div className="form-floating mb-3">
               <input
                 type="password"
                 className="form-control innpt"
-                id="floatingInput"
+                id="floatingInput1"
                 placeholder="name@example.com"
-                // value={password}
-                // onChange={e => setPassword(e.target.value)}
+                value={enterPassword}
+                onChange={e => setenterPassword(e.target.value)}
               />
-              <label for="floatingInput">Password</label>
+              <label for="floatingInput1">Password</label>
             </div>
             {/* <div className="form-floating">
                   <input
@@ -99,7 +115,7 @@ function SignIn() {
                 type="button"
                 className="btn btn-outline-dark w-100  signupbtn"
                 style={{ height: "6vh" }}
-                // onClick={HandleLogin}
+                onClick={HandleLogin}
               >
                 SIGN IN
               </button>

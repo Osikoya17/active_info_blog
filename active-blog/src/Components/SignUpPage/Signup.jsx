@@ -7,38 +7,51 @@ import axios from "axios";
 import swal from "sweetalert";
 
 function Signup() {
-  let [email, setEmail] = useState("");
-  let [username, setUsername] = useState("");
-  let [password, setPassword] = useState("");
-  let [verifiedEmail, setverifiedEmail] = useState("");
+
+
+  let [Nemail, setEmail] = useState("");
+  let [Nusername, setUsername] = useState("");
+  let [Npassword, setPassword] = useState("");
+  let [email, setverifiedEmail] = useState("");
+  let [username, setverifiedusername] = useState("");
+  let [password, setverifiedpassword] = useState("");
   let regexEmailverificationPattern =
     /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
   const Register = async () => {
-    let Nemail = email.trim();
-    let Nusername = username.trim();
-    let Npassword = password.trim();
 
-    if (!Nemail || !Nusername || !Npassword) {
-      return swal("oppos!", "Kindly fill in the neccessary", "info");
+    let checkemail = Nemail.trim();
+     username = Nusername.trim();
+     password = Npassword.trim();
+
+    if (!checkemail || !username || !password) {
+      return swal("oppos!", "Kindly fill in the neccessary details", "info");
     }
 
-    if (!regexEmailverificationPattern.test(Nemail)) {
+    if (!regexEmailverificationPattern.test(checkemail)) {
       return swal("You have entered an invalid email address!", "warning");
     } else {
-      verifiedEmail = Nemail;
-
-      const User = {
-        verifiedEmail,
-        Nusername,
-        Npassword,
+      email = checkemail;
+       
+      const User =   {
+        email,
+        username,
+        password,
       };
-      console.log(User);
+      // console.log(User);
+
+      // const User =   new FormData()
+          
+      // User.set("email", verifiedEmail )
+      // User.set("username", Nusername )
+      // User.set("password", Npassword )
+
       try {
-        const url = "";
+        console.log(User);
+        const url = "https://active-info.onrender.com/signup";
         const response = await axios.post(url, User);
         console.log(response);
-        // console.log(response.data);
+        console.log(response.data);
         // console.log(request.status);
         // console.log(request.statusText);
       } catch (error) {
@@ -46,15 +59,18 @@ function Signup() {
       }
     }
 
-    setEmail(" ");
-    setUsername(" ");
-    setPassword(" ");
+    setEmail("");
+    setUsername("");
+    setPassword("");
   };
 
   // functon for create post
 
-  const [article, setArticle] = useState("");
+  const [story, setStory] = useState("");
   const [file, setFile] = useState("");
+  const [title, setTitle] = useState("");
+  const [Categories, setCategories] = useState("");
+  const [author, setAuthor] = useState("Habeebllah Jimoh");
 
 
   function handleFile(ev) {
@@ -63,16 +79,22 @@ function Signup() {
 
   }
 
+   
+
   const Handlesubmit = async () => {
-    const url = ""
+    const url = "https://active-info.onrender.com/upload"
 
     const formData = new FormData()
 
     formData.set("image", file)
-    formData.set("article", article)
+    formData.set("story", story)
+    formData.set("category", Categories)
+    formData.set("title", title)
+    formData.set("author", author)
 
     try {
       const response = await axios.post(url, formData)
+      console.log(response.data);
 
       
     } catch (error) {
@@ -110,18 +132,20 @@ function Signup() {
                 className="form-control innpt"
                 id="floatingInput1"
                 placeholder="name@example.com"
-                value={email}
+                value={Nemail}
+                name="email"
                 onChange={(e) => setEmail(e.target.value)}
               />
               <label for="floatingInput1">Email address</label>
             </div>
             <div className="form-floating mb-3">
               <input
-                type="email"
+                type="text"
                 className="form-control innpt"
                 id="floatingInput"
                 placeholder="name@example.com"
-                value={username}
+                value={Nusername}
+                name="username"
                 onChange={(e) => setUsername(e.target.value)}
               />
               <label for="floatingInput">Username</label>
@@ -132,7 +156,8 @@ function Signup() {
                 className="form-control innpt"
                 id="floatingPassword"
                 placeholder="Password"
-                value={password}
+                value={Npassword}
+                name="password"
                 onChange={(e) => setPassword(e.target.value)}
               />
               <label for="floatingPassword">Password</label>
@@ -192,15 +217,17 @@ function Signup() {
               ></button>
             </div>
             <div className="modal-body">
-              <div className="text-dark ms-4 fs-5 fw-bolder mt-0">
+              <div  className="text-dark ms-4 fs-5 fw-bolder mt-0">
                 Habeebllah Jimoh
               </div>
               <div className="w-50 mt-2">
                 <select
                   className="form-select select-div rounded-pill"
                   aria-label="Default select example"
+                  value={Categories}
+                  onChange={(e) => setCategories(e.target.value)}
                 >
-                  <option selected>Categories</option>
+                  <option selected >Categories</option>
                   <option value="Politics">Politics</option>
                   <option value="Games">Games</option>
                   <option value="Crypto">Crypto</option>
@@ -214,13 +241,27 @@ function Signup() {
                   <option value="Engineering">Engineering</option>
                 </select>
               </div>
+                
+              <div className="form-floating my-1 w-75 ">
+              <input
+                type="text"
+                className="form-control rounded-pill innpt"
+                id="floatingInput2"
+                placeholder="name@example.com"
+                value={title}
+                name="Title"
+                onChange={(e) => setTitle(e.target.value)}
+              />
+              <label for="floatingInput2">Title</label>
+            </div>
 
               <textarea
                 type="text"
                 placeholder="What did you want to talk about?"
-                className="w-100 border border-1 rounded-2 my-3 outli"
+                className="w-100 border border-1 rounded-2 my-2 outli"
                 style={{ height: "20vh" }}
-                onChange={e => setArticle(e.target.value)}
+                 value={story}
+                onChange={e => setStory(e.target.value)}
               >
                 {" "}
               </textarea>
