@@ -1,0 +1,96 @@
+main{
+    display: flex;
+}
+aside{
+    flex: 3;
+    border-right: 1px solid rgb(170, 170, 170);
+    height: 100vh;
+    display: flex;
+    padding-top: 50px;
+    flex-direction: column;
+    align-items:center
+}
+.qwert{
+    padding: 40px;
+    width: 100%;
+    height: 40px;
+    border-bottom: 1px solid rgb(105, 105, 105);
+    cursor: pointer;
+}
+.qwert:hover{
+    background-color: #bf0100;
+    color: #f5f5f5;
+}
+.qwert>h6>i{
+    margin-right: 10px;
+    color: rgb(105, 105, 105);
+}
+.form{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+.form>div{
+    flex: 6;
+}
+.form>div>input{
+   width: 80%;
+   height: 40px;
+   border: 1px solid grey;
+   border-radius: 5px;
+}
+.form>div>input:focus{
+    outline: none;
+}
+.btn1,.btn2{
+    border: none;
+    margin: 10px;
+    width: 80px;
+    height: 40px;
+    border-radius: 5px;
+}
+.btn1{
+    background-color:#bf0100 ;
+    color: white;
+}
+.btn1:hover{
+    background-color:#7e0c0c ;
+}
+.btn2{
+    background-color:#f5f5f5 ;
+}
+.btn2:hover{
+    background-color:#c0bebe ;
+}
+.form1>textarea{
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+}
+  
+aside>div>img{
+    object-fit: cover;
+    width: 90px;
+    height: 90px;
+    border: 1px solid grey;
+    border-radius: 50%;
+    background-color: rgba(117, 117, 117, 0.164);
+}
+aside>div>div{
+    margin-left: 40%;
+}
+aside>div>div>input{
+    display: none;
+}
+aside>div>div>label>i{
+    font-size: 25px;
+    height: 20px;
+    color:  rgb(105, 105, 105);
+    cursor: pointer;
+
+}
+section{
+    flex: 9;
+    margin:25px 60px ;
+}
+

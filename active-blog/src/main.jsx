@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider} from 'react-router-dom'
 import App from './App'
 import Signup from './Components/SignUpPage/Signup'
 import SignIn from './Components/SignInPage/SignIn'
+import Profile from './Components/Profile/Profile'
 
 // import './index.css'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
@@ -15,6 +16,7 @@ const router =  createBrowserRouter (
     {path : "/", element: <App/> },
     {path : "/login", element: <SignIn/> },
     {path : "/signup", element: <Signup /> },
+    {path:"/profile",element: <Profile/> }
   ]
 )
 
