@@ -41,7 +41,7 @@ h1 {
     font-size: 70px;
 }
 
-a {
+.trend {
     color: #989898 !important;
     text-decoration: none !important;
 }
@@ -54,6 +54,8 @@ a {
     background-color: #bf0100 !important;
     color: white;
     cursor: pointer;
+    letter-spacing: 5px;
+    transition: 0.8s;
 }
 
 .category:focus-within {
