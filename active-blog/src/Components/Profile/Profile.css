@@ -1,5 +1,7 @@
 .main{
     display: flex;
+    color: rgb(192, 193, 193);
+    background-color: rgb(236, 236, 236);
 }
 aside{
     flex: 3;
