@@ -1,4 +1,5 @@
 import { useState } from "react"
+import UserLayout from "../../Layout/UserLayout"
 import "./Profile.css"
 export default function Profile() {
     const[file,setFile] =useState()
@@ -7,7 +8,8 @@ export default function Profile() {
         setFile(e.target.files[0])
     } 
   return (
-    <main>
+    <UserLayout>
+    <main className="main">
         <aside>
             <div>
                 {file && <img  src={URL.createObjectURL(file)} />}
@@ -56,5 +58,7 @@ export default function Profile() {
           
         </section>
     </main>
+    </UserLayout>
+    
   )
 }

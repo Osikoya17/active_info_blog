@@ -95,7 +95,7 @@ const Homepage = () => {
 
             </main>
 
-        </DefaultLayout>
+        </DefaultLayout>                               
     );
 }
 

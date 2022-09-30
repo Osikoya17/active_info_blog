@@ -30,8 +30,8 @@ section {
 .bg {
     background-image: url(../../assets/Background.jpg);
     height: 50vh;
-    background-position: center;
-    background-size: 125rem;
+    background-position:center;
+    background-size: 120rem;
     background-repeat: no-repeat;
     background-blend-mode: multiply;
 }

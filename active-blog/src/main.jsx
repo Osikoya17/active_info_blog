@@ -10,11 +10,12 @@ import Profile from './Components/Profile/Profile'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js';
 import BlogDetails from './Components/BlogDetails/BlogDetails'
+import NotFound from './Components/NotFound/NotFound'
 
 
 const router = createBrowserRouter(
   [
-    { path: "/", element: <App /> },
+    { path: "/", element: <App /> ,errorElement: <NotFound/> },
     { path: "/login", element: <SignIn /> },
     { path: "/signup", element: <Signup /> },
     { path: "/details:uid", element: <BlogDetails /> },
